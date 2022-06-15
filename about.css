@@ -1,0 +1,342 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+    --green: green;
+    --black: #444;
+    --light-color: rgb(38, 32, 32);
+    --bg-color: #e6e6e6;
+    --border: .1rem solid rgba(0, 0, 0, .2);
+    --box-shadow: .4rem .4rem 1rem #ccc, -.4rem -.4rem 1rem #fff;
+    --box-shadow-inset: .4rem .4rem 1rem #ccc inset, -.4rem -.4rem 1rem #fff inset;
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+body.active {
+    --black: #fff;
+    --light-color: #ddd;
+    --bg-color: #222;
+    --border: .1rem solid rgba(0, 0, 0, .4);
+    --box-shadow: .4rem .4rem 1rem #111,
+        -.4rem -.4rem 1rem #333;
+    --box-shadow-inset: .4rem .4rem 1rem #111 inset,
+        -.4rem -.4rem 1rem #333 inset;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+nav {
+    background-color: rgb(63, 233, 242);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 100px;
+}
+
+.logo {
+    max-height: 81px;
+    border-radius: 33px;
+}
+
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+nav ul li a {
+    color: #1d1d24;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a:hover {
+    color: #fd4766;
+}
+
+nav ul li a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #fd4766;
+    transition: 0.3s;
+    bottom: 0;
+}
+
+nav ul li a:hover:after {
+    width: 100%;
+}
+
+.btn {
+    color: #fff;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 16px 40px;
+    border-radius: 500px;
+    display: inline-block;
+    font-weight: 500;
+    transition: all 0.4s ease-in-out;
+    background-size: 152% 100%;
+    background: #fd4766;
+    border: 2px solid #fd4766;
+}
+
+.btn:hover {
+    background: transparent;
+    border-color: #fd4766;
+    color: #fd4766;
+}
+
+.hamburger {
+    position: relative;
+    width: 30px;
+    height: 4px;
+    background: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 2;
+    transition: 0.3s;
+
+}
+
+.hamburger:before,
+.hamburger:after {
+    content: "";
+    position: absolute;
+    height: 4px;
+    right: 0;
+    background: #ffffff;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.hamburger:before {
+    top: -10px;
+    width: 20px;
+}
+
+.hamburger:after {
+    top: -20px;
+    width: 25px;
+}
+
+.toggle-menu {
+    position: absolute;
+    width: 30px;
+    height: 60px;
+    z-index: 3;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.hamburger,
+.toggle-menu {
+    display: none;
+
+}
+
+.navigation input:checked~.hamburger {
+    background: transparent;
+}
+
+.navigation input:checked~.hamburger:before {
+    top: 0;
+    transform: rotate(-45deg);
+    width: 30px;
+}
+
+.navigation input:checked~.hamburger:after {
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+}
+
+.main {
+    background-color: rgb(8, 252, 252);
+}
+
+.heading {
+    text-align: center;
+    font-size: 5rem;
+    color: var(--black);
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+}
+
+.heading span {
+    color: var(--green);
+    text-transform: uppercase;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap-reverse;
+    gap: 2rem;
+}
+
+.about .row .box-container {
+    flex: 1 1 40rem;
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.about .row .box-container .box {
+    flex: 1 1 18rem;
+    text-align: center;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+}
+
+.about .row .box-container .box h3 {
+    font-size: 5rem;
+    color: var(--black);
+    line-height: 1.1;
+}
+
+.about .row .box-container .box p {
+    font-size: 1.7rem;
+    color: var(--light-color);
+    padding: .5rem 0;
+}
+
+.about .row .content {
+    flex: 1 1 40rem;
+}
+
+.about .row .content h3 {
+    font-size: 3.5rem;
+    color: var(--black);
+    line-height: 1.8;
+}
+
+.about .row .content h3 span {
+    color: var(--green);
+}
+
+.about .row .content p {
+    font-size: 1.7rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.about .row:nth-child(3) {
+    padding-top: 2rem;
+}
+
+.about .row .progress {
+    flex: 1 1 40rem;
+}
+
+.about .row .progress h3 {
+    color: var(--black);
+    font-weight: normal;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.about .row .progress .bar {
+    box-shadow: var(--box-shadow);
+    border-radius: 5rem;
+    height: 2rem;
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.about .row .progress .bar span {
+    display: block;
+    height: 100%;
+    background: var(--green);
+    border-radius: 5rem;
+}
+
+.about .row .progress .bar-1-1 span {
+    width: 90%;
+}
+
+.about .row .progress .bar-1-2 span {
+    width: 75%;
+}
+
+.about .row .progress .bar-1-3 span {
+    width: 80%;
+}
+
+.about .row .progress .bar-2-1 span {
+    width: 95%;
+}
+
+.about .row .progress .bar-2-2 span {
+    width: 89%;
+}
+
+.about .row .progress .bar-2-3 span {
+    width: 65%;
+}
+
+.navigation input:checked~.menu {
+    right: 0;
+    box-shadow: -20px 0 40px rgba(0, 0, 0, 0.3);
+}
+
+@media(max-width:992px) {
+
+    .hamburger,
+    .toggle-menu {
+        display: flex;
+        position: absolute;
+        right: 30px;
+
+    }
+
+    .menu {
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        background: #4527a0;
+        width: 300px;
+        height: 100%;
+        padding-top: 65px;
+
+    }
+
+    .menu ul a,
+    .menu ul a:hover {
+
+        padding: 30px;
+        font-size: 20px;
+        box-shadow: 0 1px 0 rgb(255, 255, 255, 0.1);
+        inset: ;
+    }
+}
